@@ -493,14 +493,16 @@
     margin-bottom:24px;
     display:block;
   }
-  .modal-image-group{display:flex; flex-direction:column; gap:12px; margin-bottom:24px;}
-  .modal-image-group img{width:100%; border:1px solid var(--rule-strong); display:block;}
+  .modal-image-group{display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:24px;}
+  .modal-image-group img{max-width:100%; border:1px solid var(--rule-strong); display:block;}
+
   .modal-section-label{
     font-family:var(--font-mono);
-    font-size:0.68rem;
-    letter-spacing:0.12em;
-    color:var(--ink-faint);
-    margin:26px 0 10px;
+    font-weight:700;
+    font-size:0.9rem;
+    letter-spacing:0.08em;
+    color:var(--ink);
+    margin:30px 0 12px;
   }
   .modal-overview{
     color:var(--ink-soft);
@@ -800,34 +802,47 @@
   <div class="project-grid" id="projectGrid">
     <div class="project-card" data-id="p1" data-category="research">
       <span class="card-tag">research</span>
-      <div class="card-title">"DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration"</div>
-      <div class="card-desc">Degradation-aware Mamba-based framework for unified image restoration. Published at IPIU 2026 as first author.</div>
+      <div class="card-title">DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration</div>
+      <div class="card-desc">Degradation-aware Mamba-based framework for unified image restoration.</div>
       <div class="card-date">2025.09 – 2026.01</div>
     </div>
-
-    <div class="project-card" data-id="p2" data-category="research">
-      <span class="card-tag">research</span>
-      <div class="card-title">[프로젝트 제목 2]</div>
-      <div class="card-desc">[한 줄 설명]</div>
-      <div class="card-date">[YYYY.MM – YYYY.MM]</div>
+  
+    <div class="project-card" data-id="p2" data-category="competition">
+      <span class="card-tag">competition</span>
+      <div class="card-title">Detect LLM: Paragraph-level Classification of AI-Generated Text</div>
+      <div class="card-desc">Paragraph-level AI-generated text detection using weak supervision, pseudo-labeling, and hybrid ensembling.</div>
+      <div class="card-date">2025.06 – 2025.07</div>
     </div>
-
+  
     <div class="project-card" data-id="p3" data-category="activity">
       <span class="card-tag">activity</span>
-      <div class="card-title">[프로젝트 제목 3]</div>
-      <div class="card-desc">[한 줄 설명]</div>
-      <div class="card-date">[YYYY.MM – YYYY.MM]</div>
+      <div class="card-title">LLM-based Financial Report Generation from DART Filings</div>
+      <div class="card-desc">Evidence-grounded financial report generation system separating calculation from LLM-based interpretation.</div>
+      <div class="card-date">2025</div>
     </div>
-
+  
     <div class="project-card" data-id="p4" data-category="course">
       <span class="card-tag">course project</span>
-      <div class="card-title">[프로젝트 제목 4]</div>
-      <div class="card-desc">[한 줄 설명]</div>
-      <div class="card-date">[YYYY.MM – YYYY.MM]</div>
+      <div class="card-title">Multi-Perspective Analysis for Quantifying Political Bias in News Articles</div>
+      <div class="card-desc">Korean news bias analysis system combining lexical, emotional, and contextual NLP signals.</div>
+      <div class="card-date">2025</div>
+    </div>
+  
+    <div class="project-card" data-id="p5" data-category="competition">
+      <span class="card-tag">competition</span>
+      <div class="card-title">Environmental Impact Analysis of the Drug Supply Chain</div>
+      <div class="card-desc">Lifecycle-based ESG analysis of environmental externalities in illicit drug production and distribution.</div>
+      <div class="card-date">2024</div>
+    </div>
+  
+    <div class="project-card" data-id="p6" data-category="competition">
+      <span class="card-tag">competition</span>
+      <div class="card-title">Curriculum-to-Career Roadmap Analytics</div>
+      <div class="card-desc">Data-driven analysis connecting university curriculum structures with graduate employment outcomes.</div>
+      <div class="card-date">2024</div>
     </div>
   </div>
-</section>
-
+  
 <!-- ================= QUALIFICATIONS ================= -->
 <section class="block" id="qualifications">
   <div class="section-head">
@@ -907,41 +922,85 @@
       ]
     },
     p2: {
-      tag: "research",
-      title: "[프로젝트 제목 2]",
-      meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
+      tag: "competition",
+      title: "Detect LLM: Paragraph-level Classification of AI-Generated Text",
+      meta: "2025.06 – 2025.07 · Competition · Modeling / Weak Supervision",
       images: [],
-      overview: "[프로젝트 개요를 여기에 서술]",
+      overview: "This project addresses AI-generated text detection under a structural supervision mismatch. The training data provides only document-level labels, while the evaluation requires paragraph-level predictions. Since a single document may contain both human-written and AI-generated paragraphs, directly propagating document labels to every paragraph can introduce substantial label noise.\n\nTo resolve this, we developed a weakly supervised paragraph-level detection framework. The system reconstructs fine-grained supervision from coarse document-level annotations using perplexity-based relabeling, density-based pseudo-label assignment, stylometric features, and hybrid modeling. The final model combines KLUE-RoBERTa semantic classifiers with a CatBoost classifier and a custom Extreme Voting ensemble strategy.",
       links: [
-        { label: "GitHub ↗", url: "#" }
+        { label: "GitHub ↗", url: "https://github.com/pokssakk/Detect_AI_Generated_Text" }
       ],
       contributions: [
-        "[기여 1]",
-        "[기여 2]"
+        "Designed a weak supervision pipeline to recover paragraph-level labels from document-level annotations.",
+        "Combined multi-model perplexity, stylometric features, and HDBSCAN clustering for pseudo-label assignment.",
+        "Engineered and trained a CatBoost classifier to complement transformer-based semantic models.",
+        "Developed a custom Extreme Voting ensemble strategy and achieved a final submission ROC-AUC of 0.889."
       ]
     },
+  
     p3: {
       tag: "activity",
-      title: "[프로젝트 제목 3]",
-      meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
+      title: "LLM-based Financial Report Generation from DART Filings",
+      meta: "2025 · Activity Project · Data Pipeline / LLM Report Generation",
       images: [],
-      overview: "[프로젝트 개요를 여기에 서술]",
-      links: [],
+      overview: "DART business reports contain text, financial tables, and footnote references in a structurally complex format. Numerical values and interpretive descriptions are often interwoven, making it difficult for LLM-based systems to distinguish what should be calculated from what should be interpreted.\n\nThis project builds a trustworthy, evidence-grounded financial report generation system for beginner investors. The core design principle is a strict separation between the system layer and the LLM layer: financial metrics are extracted and calculated through SQL and Python pipelines, while the LLM is used only for narrative explanation based on verified context.",
+      links: [
+        { label: "Presentation ↗", url: "#" }
+      ],
       contributions: [
-        "[기여 1]",
-        "[기여 2]"
+        "Built a reliable company selection pipeline by validating DART filings, company metadata, and KRX market data.",
+        "Selected 100 KOSPI companies and mapped each to an industry- and size-matched benchmark firm.",
+        "Designed a section-based report generation interface using input specifications for each report component.",
+        "Implemented prompt pipelines that provide only precomputed, verified financial context to the LLM.",
+        "Orchestrated multi-stage report generation and collected section outputs for PDF report creation."
       ]
     },
+  
     p4: {
       tag: "course project",
-      title: "[프로젝트 제목 4]",
-      meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
+      title: "Multi-Perspective Analysis for Quantifying Political Bias in News Articles",
+      meta: "2025 · Course Project · NLP / Data Analysis",
       images: [],
-      overview: "[프로젝트 개요를 여기에 서술]",
+      overview: "This project aims to quantify political bias in Korean news articles using multi-dimensional NLP analysis. Political bias is not only reflected in specific keywords, but also in emotional tone toward political figures and contextual framing across the article.\n\nThe system integrates three complementary analysis layers: lexical analysis based on partisan keyword frequency, emotional analysis using KOTE-based sentiment profiling, and contextual analysis using a fine-tuned KoBERT classifier. The outputs are normalized and aggregated into a unified political bias score ranging from progressive to conservative leaning.",
       links: [],
       contributions: [
-        "[기여 1]",
-        "[기여 2]"
+        "Designed the end-to-end analysis framework, from problem formulation to multi-layer scoring architecture.",
+        "Built a Naver News crawling and preprocessing pipeline using BeautifulSoup, Regex, and Kiwi.",
+        "Fine-tuned KoBERT to classify contextual political framing beyond keyword-level signals.",
+        "Integrated KOTE sentiment analysis and mapped fine-grained emotion labels into polarity categories.",
+        "Developed a weighted scoring algorithm combining lexical, emotional, and contextual signals into a unified bias index."
+      ]
+    },
+  
+    p5: {
+      tag: "competition",
+      title: "Environmental Impact Analysis of the Drug Supply Chain",
+      meta: "2024 · ESG Data Hackathon · Data Analysis / Visualization",
+      images: [],
+      overview: "This project analyzes the environmental externalities of the illicit drug industry from a lifecycle-based ESG perspective. While discussions on illegal drugs often focus on public health and crime, this project investigates hidden environmental impacts across production, distribution, and consumption stages.\n\nGiven the underground nature of the domain and limited data availability, the project focuses on constructing a transparent estimation model using conservative assumptions. The analysis highlights how illegal transportation routes, energy-intensive cultivation, and cryptocurrency-based transactions may contribute to cumulative environmental risk.",
+      links: [],
+      contributions: [
+        "Framed the project around a lifecycle-based analysis of production, distribution, and consumption stages.",
+        "Collected and structured fragmented data from institutional reports, environmental studies, and investigative sources.",
+        "Designed a data schema for illicit cross-border transaction flows and engineered route-level analytical variables.",
+        "Developed a transportation carbon-emission model comparing baseline and real logistics scenarios.",
+        "Produced visualizations translating transaction volume, travel distance, and estimated emissions into interpretable evidence."
+      ]
+    },
+  
+    p6: {
+      tag: "competition",
+      title: "Curriculum-to-Career Roadmap Analytics",
+      meta: "2024 · Data Visualization Competition · Data Integration / Analytics",
+      images: [],
+      overview: "This project connects university curriculum structures with graduate employment outcomes through data-driven analysis. Curriculum information and employment data often exist separately, making it difficult to evaluate whether educational objectives align with actual career outcomes.\n\nThe analysis integrates curriculum and graduate employment datasets, visualizes course-to-career pathways, and evaluates the relationship between module-based curricula and job placement outcomes. The project provides insights for curriculum improvement, industry alignment, and student career pathway support.",
+      links: [],
+      contributions: [
+        "Integrated curriculum and graduate employment datasets into a unified analysis structure.",
+        "Designed a heuristic rule to infer module participation from course enrollment records.",
+        "Developed curriculum roadmap visualizations using bubble-based representations of course importance.",
+        "Constructed module–career matrices to analyze alignment between curriculum modules and employment outcomes.",
+        "Identified curriculum–market gaps and modules associated with stronger employment outcomes."
       ]
     }
   };
