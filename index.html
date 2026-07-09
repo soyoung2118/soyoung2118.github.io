@@ -27,7 +27,7 @@
     --font-mono:'JetBrains Mono', monospace;
 
     --maxw:1040px;
-    --maxw-content:800px;
+    --maxw-content:900px;
     --pad-desktop:28px;
   }
 
@@ -76,13 +76,14 @@
     max-width:var(--maxw-content);
     margin:0 auto;
     padding:52px var(--pad-desktop) 56px;
-    display:grid;
-    grid-template-columns:1fr 260px;
-    gap:48px;
-    align-items:start;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
   }
   .hero-main{
     order:1;
+    max-width:520px;
   }
   
   .hero-photo-wrap{
@@ -194,7 +195,7 @@
 
   section.block{
     max-width:var(--maxw-content); margin:0 auto;
-    padding:8px var(--pad-desktop) 52px;
+    padding:8px var(--pad-desktop) 70px;
   }
   .section-head{
     display:flex; align-items:center; gap:16px;
