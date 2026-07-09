@@ -508,6 +508,7 @@
     color:var(--ink-soft);
     font-size:0.95rem;
     line-height:1.7;
+    white-space:pre-line;
   }
   .modal-links{
     display:flex;
@@ -841,6 +842,34 @@
       <div class="card-desc">Data-driven analysis connecting university curriculum structures with graduate employment outcomes.</div>
       <div class="card-date">2024</div>
     </div>
+
+    <div class="project-card" data-id="p7" data-category="activity">
+      <span class="card-tag">activity</span>
+      <div class="card-title">itda: AI-powered SaaS Platform for Online Course Management</div>
+      <div class="card-desc">AI-driven education SaaS platform for creating, managing, and operating online courses.</div>
+      <div class="card-date">2025</div>
+    </div>
+    
+    <div class="project-card" data-id="p8" data-category="activity">
+      <span class="card-tag">activity</span>
+      <div class="card-title">Inspace: Synesthetic Archiving Platform</div>
+      <div class="card-desc">Sensory-based digital archive platform for collecting and arranging visual and auditory inspirations.</div>
+      <div class="card-date">2024</div>
+    </div>
+    
+    <div class="project-card" data-id="p9" data-category="activity">
+      <span class="card-tag">activity</span>
+      <div class="card-title">Midpoint: Where to Meet?</div>
+      <div class="card-desc">Meeting-place recommendation service using a median-based midpoint algorithm.</div>
+      <div class="card-date">2024</div>
+    </div>
+    
+    <div class="project-card" data-id="p10" data-category="activity">
+      <span class="card-tag">activity</span>
+      <div class="card-title">Notionable: Notion Template Marketplace and Community Platform</div>
+      <div class="card-desc">Community and marketplace platform for discovering, sharing, and selling Notion templates.</div>
+      <div class="card-date">2023</div>
+    </div>
   </div>
   
 <!-- ================= QUALIFICATIONS ================= -->
@@ -1002,7 +1031,84 @@
         "Constructed module–career matrices to analyze alignment between curriculum modules and employment outcomes.",
         "Identified curriculum–market gaps and modules associated with stronger employment outcomes."
       ]
-    }
+    },
+
+      p7: {
+        tag: "activity",
+        title: "itda: AI-powered SaaS Platform for Online Course Management",
+        meta: "2025 · Activity Project · Frontend / React",
+        images: [],
+        overview: "itda is an AI-driven education platform designed to support online course creation and management. The service helps individual educators build and operate courses without relying on complex LMS systems, while providing AI-assisted feedback tools for learners.\n\nThe platform focuses on improving course completion and engagement through interactive, practice-based learning workflows. I contributed mainly to the frontend implementation of classroom operation interfaces and course management features.",
+        links: [
+          { label: "GitHub ↗", url: "https://github.com/soyoung2118/itda-ieoso_frontend" },
+          { label: "Presentation ↗", url: "#" }
+        ],
+        contributions: [
+          "Implemented core classroom interfaces, including curriculum views, editing pages, and classroom management dashboards.",
+          "Developed student-specific assignment overview pages and announcement-related pages.",
+          "Contributed to multilingual support for Korean and English localization.",
+          "Integrated ChannelTalk as a third-party customer communication tool.",
+          "Built reusable UI components to support course operation workflows."
+        ]
+      },
+    
+      p8: {
+        tag: "activity",
+        title: "Inspace: Synesthetic Archiving Platform",
+        meta: "2024 · Activity Project · Backend / Spring Boot",
+        images: [],
+        overview: "Inspace is a web platform that helps users curate sensory-based archive spaces by collecting visual and auditory references in one place. Rather than enforcing rigid layouts, the service supports flexible arrangement so that users can build personalized digital scrapbooks based on their inspirations and aesthetic preferences.\n\nI worked on the backend side of the project, focusing on database design, API specifications, search functionality, and content retrieval features for personalized archive spaces.",
+        links: [
+          { label: "GitHub ↗", url: "https://github.com/2024-2-SOLUX-in-space" },
+          { label: "Presentation ↗", url: "#" }
+        ],
+        contributions: [
+          "Designed the system ERD and database schema.",
+          "Authored API specifications for core service features.",
+          "Implemented keyword-based search functionality.",
+          "Developed condition-based filtering logic for refined content retrieval.",
+          "Built features that allow users to add search results to personalized archive spaces."
+        ]
+      },
+    
+      p9: {
+        tag: "activity",
+        title: "Midpoint: Where to Meet?",
+        meta: "2024 · Activity Project · Frontend / React",
+        images: [],
+        overview: "Midpoint is a web service that helps multiple users find a fair and efficient meeting location. Instead of manually searching for convenient places, the system calculates an optimal midpoint using a median-based algorithm and recommends purpose-based venues such as cafés, restaurants, and study spaces.\n\nI contributed to the frontend implementation, mainly focusing on authentication pages, SNS login integration, account management logic, and shared UI layout components.",
+        links: [
+          { label: "GitHub ↗", url: "https://github.com/Solucitation" },
+          { label: "Presentation ↗", url: "#" }
+        ],
+        contributions: [
+          "Designed and implemented core authentication pages, including main, login, sign-up, and password recovery pages.",
+          "Developed Kakao SNS login integration and authentication workflows.",
+          "Implemented email verification and password reset handling.",
+          "Built account management logic, including form validation and duplicate account checks.",
+          "Created shared UI layout components such as global headers and reusable page structures."
+        ]
+      },
+    
+      p10: {
+        tag: "activity",
+        title: "Notionable: Notion Template Marketplace and Community Platform",
+        meta: "2023 · Activity Project · Frontend / Vue.js",
+        images: [],
+        overview: "Notionable is a web platform for discovering, sharing, buying, and selling Notion templates. The service also provides community features so that users can exchange tips, ask questions, and learn Notion through shared templates and user-generated posts.\n\nI worked on the frontend implementation using Vue.js, mainly developing the community page, post creation flow, user interaction features, and search and navigation functions.",
+        links: [
+          { label: "GitHub ↗", url: "https://github.com/E1I6-Notionable" },
+          { label: "Presentation ↗", url: "#" }
+        ],
+        contributions: [
+          "Designed and implemented the Community page UI.",
+          "Organized posts into category-based boards, including All Posts, Popular, Free Board, Tips, and Q&A.",
+          "Developed the post creation interface and integrated it with backend APIs.",
+          "Implemented user interaction features such as reactions and authenticated comment creation.",
+          "Built search and filtering functionality and improved navigation across board categories."
+        ]
+      }
+    
   };
 
   /* ---- 필터 ---- */
