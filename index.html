@@ -907,7 +907,7 @@
       tag: "research",
       title: "[프로젝트 제목 2]",
       meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
-      image: "",
+      images: [],
       overview: "[프로젝트 개요를 여기에 서술]",
       links: [
         { label: "GitHub ↗", url: "#" }
@@ -921,7 +921,7 @@
       tag: "activity",
       title: "[프로젝트 제목 3]",
       meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
-      image: "",
+      images: [],
       overview: "[프로젝트 개요를 여기에 서술]",
       links: [],
       contributions: [
@@ -933,7 +933,7 @@
       tag: "course project",
       title: "[프로젝트 제목 4]",
       meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
-      image: "",
+      images: [],
       overview: "[프로젝트 개요를 여기에 서술]",
       links: [],
       contributions: [
@@ -963,7 +963,7 @@
   const modalTag = document.getElementById('modalTag');
   const modalTitle = document.getElementById('modalTitle');
   const modalMeta = document.getElementById('modalMeta');
-  const modalImage = document.getElementById('modalImage');
+  const modalImageGroup = document.getElementById('modalImageGroup');
   const modalOverview = document.getElementById('modalOverview');
   const modalLinks = document.getElementById('modalLinks');
   const modalContributions = document.getElementById('modalContributions');
@@ -978,12 +978,12 @@
       modalTitle.textContent = d.title;
       modalMeta.textContent = d.meta;
 
-      if(d.image){
-        modalImage.src = d.image;
-        modalImage.style.display = 'block';
-      } else {
-        modalImage.style.display = 'none';
-      }
+      modalImageGroup.innerHTML = '';
+      (d.images || []).forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        modalImageGroup.appendChild(img);
+      });
 
       modalOverview.textContent = d.overview;
 
