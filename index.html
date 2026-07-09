@@ -26,8 +26,8 @@
     --font-body:'Inter', -apple-system, sans-serif;
     --font-mono:'JetBrains Mono', monospace;
 
-    --maxw:1180px;
-    --pad-desktop:72px;
+    --maxw:1040px;
+    --pad-desktop:44px;
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -72,14 +72,14 @@
   nav a:hover{color:var(--accent-a); background:var(--accent-soft);}
 
   .hero{
-    max-width:var(--maxw); margin:0 auto;
+    max-width:var(--maxw); 
+    margin:0 auto;
     padding:88px var(--pad-desktop) 90px;
     display:grid;
-    grid-template-columns:1fr 220px;
-    gap:64px;
+    grid-template-columns:1fr 260px;
+    gap:48px;
     align-items:start;
   }
-
   .hero-main{
     order:1;
   }
@@ -88,8 +88,9 @@
     order:2;
     position:relative;
     padding:14px;
-    width:220px;
-    height:auto;
+    width:200px;
+    margin-top:44px;
+    justify-self:center;
   }
   .hero-photo-wrap::before,
   .hero-photo-wrap::after{
@@ -108,7 +109,6 @@
     border:1px solid var(--rule-strong);
     padding:0;
   }
-
   .eyebrow{
     font-family:var(--font-mono);
     font-size:0.72rem;
