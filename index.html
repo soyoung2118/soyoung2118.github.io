@@ -338,7 +338,7 @@
     position:relative;
     display:grid;
     grid-template-columns:120px 1fr;
-    gap:9px;
+    gap:5px;
     padding:5px 0 5px 18px;
     border-left:2px solid var(--rule-strong);
   }
@@ -414,6 +414,24 @@
     opacity:0; transition:opacity .15s ease;
   }
   .project-card:hover::after{opacity:1;}
+  .project-card.awarded{
+    border-color:#D9B24C;
+  }
+  .project-card.awarded::before{
+    content:"🏆 Awarded";
+    position:absolute;
+    top:-1px;
+    right:-1px;
+    font-family:var(--font-mono);
+    font-size:0.66rem;
+    padding:4px 10px;
+    background:#F7EFE0;
+    color:#7A4B12;
+    border:1px solid #D9B24C;
+    border-top:none;
+    border-right:none;
+    border-radius:0 0 0 4px;
+  }
   .card-tag{
     display:inline-block;
     font-family:var(--font-mono);
@@ -801,7 +819,7 @@
   </div>
 
   <div class="project-grid" id="projectGrid">
-    <div class="project-card" data-id="p1" data-category="research">
+    <div class="project-card awarded" data-id="p1" data-category="research">
       <span class="card-tag">research</span>
       <div class="card-title">DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration</div>
       <div class="card-desc">Degradation-aware Mamba-based framework for unified image restoration.</div>
@@ -829,14 +847,14 @@
       <div class="card-date">2025</div>
     </div>
   
-    <div class="project-card" data-id="p5" data-category="competition">
+    <div class="project-card awarded" data-id="p5" data-category="competition">
       <span class="card-tag">competition</span>
       <div class="card-title">Environmental Impact Analysis of the Drug Supply Chain</div>
       <div class="card-desc">Lifecycle-based ESG analysis of environmental externalities in illicit drug production and distribution.</div>
       <div class="card-date">2024</div>
     </div>
   
-    <div class="project-card" data-id="p6" data-category="competition">
+    <div class="project-card awarded" data-id="p6" data-category="competition">
       <span class="card-tag">competition</span>
       <div class="card-title">Curriculum-to-Career Roadmap Analytics</div>
       <div class="card-desc">Data-driven analysis connecting university curriculum structures with graduate employment outcomes.</div>
