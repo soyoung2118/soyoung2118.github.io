@@ -75,7 +75,7 @@
   .hero{
     max-width:var(--maxw-content);
     margin:0 auto;
-    padding:52px var(--pad-desktop) 56px;
+    padding:52px var(--pad-desktop) 84px;
     display:flex;
     justify-content:center;
     align-items:flex-start;
@@ -85,12 +85,12 @@
     order:1;
     max-width:520px;
   }
-  
+
   .hero-photo-wrap{
     order:2;
     position:relative;
     padding:14px;
-    width:200px;   /* 기존 200px → 240px */
+    width:200px;
     margin-top:44px;
     justify-self:center;
   }
@@ -103,9 +103,9 @@
   .hero-photo-wrap::after{ bottom:0; right:0; border-width:0 2px 2px 0; border-color:var(--accent-b); }
   .hero-photo{
     width:100%;
-    height:auto;          /* 비율 유지 */
+    height:auto;
     display:block;
-    object-fit:contain;   /* 원본 비율 유지 */
+    object-fit:contain;
     background:var(--surface);
     border:1px solid var(--rule-strong);
     padding:0;
@@ -269,21 +269,20 @@
     margin:26px 0 6px 2px;
   }
 
-  /* publication card */
   .pub-card{
     background:var(--surface);
     border:1px solid var(--rule-strong);
     padding:22px 24px;
     max-width:860px;
   }
-  
+
   .pub-badges{
     display:flex;
     flex-wrap:wrap;
     gap:6px;
     margin-bottom:12px;
   }
-  
+
   .pub-badge{
     display:inline-block;
     font-family:var(--font-mono);
@@ -293,12 +292,12 @@
     background:var(--accent-soft);
     color:var(--accent-text);
   }
-  
+
   .pub-badge.award{
     background:#F7EFE0;
     color:#7A4B12;
   }
-  
+
   .pub-title{
     font-family:var(--font-display);
     font-weight:700;
@@ -307,21 +306,21 @@
     margin-bottom:8px;
     max-width:760px;
   }
-  
+
   .pub-authors{
     color:var(--ink-soft);
     font-size:0.88rem;
     line-height:1.55;
     max-width:760px;
   }
-  
+
   .pub-links{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
     margin-top:12px;
   }
-  
+
   .pub-link{
     font-family:var(--font-mono);
     font-size:0.7rem;
@@ -329,14 +328,12 @@
     border-bottom:1px solid var(--accent-a);
     white-space:nowrap;
   }
-  
+
   .pub-link:hover{
     color:var(--accent-b);
     border-color:var(--accent-b);
   }
-  
 
-  /* seminar rows (compact, with PDF link) */
   .seminar-row{
     position:relative;
     display:grid;
@@ -479,14 +476,58 @@
     line-height:1;
   }
   .modal-close:hover{color:var(--accent-a);}
-  .modal-body-placeholder{
-    margin-top:26px;
-    padding:22px;
-    border:1px dashed var(--rule-strong);
-    color:var(--ink-faint);
+
+  .modal-meta{
     font-family:var(--font-mono);
-    font-size:0.82rem;
+    font-size:0.78rem;
+    color:var(--ink-faint);
+    margin-top:8px;
+  }
+  .modal-divider{
+    border:none; border-top:1px solid var(--rule-strong);
+    margin:20px 0;
+  }
+  .modal-image{
+    width:100%;
+    border:1px solid var(--rule-strong);
+    margin-bottom:24px;
+    display:block;
+  }
+  .modal-section-label{
+    font-family:var(--font-mono);
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    color:var(--ink-faint);
+    margin:26px 0 10px;
+  }
+  .modal-overview{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    line-height:1.7;
+  }
+  .modal-links{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .modal-links a{
+    font-family:var(--font-mono);
+    font-size:0.85rem;
+    color:var(--accent-a);
+    border-bottom:1px solid var(--accent-a);
+    width:fit-content;
+  }
+  .modal-links a:hover{color:var(--accent-b); border-color:var(--accent-b);}
+  .modal-contributions li{
+    position:relative;
+    padding-left:18px;
+    margin-top:8px;
+    color:var(--ink-soft);
+    font-size:0.92rem;
     line-height:1.6;
+  }
+  .modal-contributions li::before{
+    content:"–"; position:absolute; left:0; color:var(--ink-faint);
   }
 
   footer{
@@ -502,9 +543,9 @@
   @media (max-width:860px){
     .nav-inner{padding:16px 20px;}
     nav ul{gap:2px;}
-    .hero{grid-template-columns:1fr; padding:52px 20px 56px; gap:32px;}
+    .hero{flex-direction:column; padding:52px 20px 56px; gap:32px;}
+    .hero-main{order:2; max-width:100%;}
     .hero-photo-wrap{order:1; max-width:180px;}
-    .hero-main{order:2;}
     section.block{padding:8px 20px 56px;}
     .timeline-row, .seminar-row{grid-template-columns:1fr; gap:6px;}
     .project-grid{grid-template-columns:1fr;}
@@ -585,7 +626,7 @@
   </div>
 </section>
 
-<!-- = ================ RESEARCH ================= -->
+<!-- ================= RESEARCH ================= -->
 <section class="block" id="research">
   <div class="section-head">
     <span class="section-num">02</span>
@@ -610,21 +651,20 @@
       <span class="pub-badge">Oral</span>
       <span class="pub-badge award">🏆 Best Paper Award</span>
     </div>
-  
+
     <div class="pub-title">
       DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration
     </div>
-  
+
     <div class="pub-authors">
       Soyoung Kim, Kibeom Hong. 38th Workshop on Image Processing and Image Understanding, Jeju, Feb. 2026.
     </div>
-  
+
     <div class="pub-links">
       <a class="pub-link" href="assets/papers/DA-MambaIR_paper.pdf" target="_blank" rel="noopener">PDF ↗</a>
       <a class="pub-link" href="assets/papers/DA-MambaIR_oral.pdf" target="_blank" rel="noopener">Oral ↗</a>
     </div>
   </div>
-
 
   <div class="sub-label" style="margin-top:32px;">LAB SEMINARS</div>
   <div class="seminar-row">
@@ -727,7 +767,7 @@
       <div class="timeline-desc">SW education volunteer program for children.</div>
     </div>
   </div>
-  
+
   <div class="timeline-row">
     <div class="timeline-date">2022.08 – 2023.01</div>
     <div>
@@ -736,7 +776,7 @@
       <div class="timeline-desc">Medical volunteer club at Sookmyung Women's University.</div>
     </div>
   </div>
-  
+
 </section>
 
 <!-- ================= PROJECTS ================= -->
@@ -751,33 +791,33 @@
     <button class="filter-pill active" data-filter="all">All</button>
     <button class="filter-pill" data-filter="research">Research</button>
     <button class="filter-pill" data-filter="activity">Activity</button>
+    <button class="filter-pill" data-filter="competition">Competition</button>
     <button class="filter-pill" data-filter="course">Course Project</button>
-    <button class="filter-pill" data-filter="etc">Etc</button>
   </div>
 
   <div class="project-grid" id="projectGrid">
-    <div class="project-card" data-category="research" data-title="[프로젝트 제목 1]">
+    <div class="project-card" data-id="p1" data-category="research">
       <span class="card-tag">research</span>
-      <div class="card-title">[프로젝트 제목 1]</div>
-      <div class="card-desc">[한 줄 설명]</div>
-      <div class="card-date">[YYYY.MM – YYYY.MM]</div>
+      <div class="card-title">"DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration"</div>
+      <div class="card-desc">Degradation-aware Mamba-based framework for unified image restoration. Published at IPIU 2026 as first author.</div>
+      <div class="card-date">2025.09 – 2026.01</div>
     </div>
 
-    <div class="project-card" data-category="research" data-title="[프로젝트 제목 2]">
+    <div class="project-card" data-id="p2" data-category="research">
       <span class="card-tag">research</span>
       <div class="card-title">[프로젝트 제목 2]</div>
       <div class="card-desc">[한 줄 설명]</div>
       <div class="card-date">[YYYY.MM – YYYY.MM]</div>
     </div>
 
-    <div class="project-card" data-category="activity" data-title="[프로젝트 제목 3]">
+    <div class="project-card" data-id="p3" data-category="activity">
       <span class="card-tag">activity</span>
       <div class="card-title">[프로젝트 제목 3]</div>
       <div class="card-desc">[한 줄 설명]</div>
       <div class="card-date">[YYYY.MM – YYYY.MM]</div>
     </div>
 
-    <div class="project-card" data-category="course" data-title="[프로젝트 제목 4]">
+    <div class="project-card" data-id="p4" data-category="course">
       <span class="card-tag">course project</span>
       <div class="card-title">[프로젝트 제목 4]</div>
       <div class="card-desc">[한 줄 설명]</div>
@@ -822,17 +862,86 @@
 <div class="modal-backdrop" id="modalBackdrop">
   <div class="modal">
     <button class="modal-close" id="modalClose">&times;</button>
+
     <span class="card-tag" id="modalTag">research</span>
     <h3 class="section-title" id="modalTitle" style="margin-top:12px;">[프로젝트 제목]</h3>
-    <div class="card-date" id="modalDate" style="margin-top:8px;">[YYYY.MM – YYYY.MM]</div>
-    <div class="modal-body-placeholder">
-      여기에 프로젝트 상세 내용(문제 정의, 방법, 결과, 링크 등)을 채워 넣으세요.
-      카드마다 다른 내용을 보여주고 싶다면 JS의 projectDetails 객체에 항목을 추가하면 됩니다.
-    </div>
+    <div class="modal-meta" id="modalMeta">[YYYY.MM – YYYY.MM] · [학회/구분] · [역할]</div>
+    <hr class="modal-divider">
+
+    <img class="modal-image" id="modalImage" src="" alt="" style="display:none;">
+
+    <div class="modal-section-label">OVERVIEW</div>
+    <p class="modal-overview" id="modalOverview">[개요 설명]</p>
+
+    <div class="modal-section-label">LINKS</div>
+    <div class="modal-links" id="modalLinks"></div>
+
+    <div class="modal-section-label">KEY CONTRIBUTIONS</div>
+    <ul class="modal-contributions" id="modalContributions"></ul>
   </div>
 </div>
 
 <script>
+  /* ---- 프로젝트 상세 데이터: 카드의 data-id 와 같은 키로 관리 ---- */
+  const projectDetails = {
+    p1: {
+      tag: "research",
+      title: '"DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration"',
+      meta: "2025.09 – 2026.01 · IPIU 2026 · 1st Author",
+      image: "", // 이미지 파일 있으면 "assets/img/da-mambair-fig1.png" 처럼 경로 넣기
+      overview: "Existing Mamba-based image restoration models provide efficient global context modeling through Selective Scan, but they are largely degradation-agnostic. In unified restoration settings, this can cause the model to confuse degradation artifacts with image structures, such as rain streaks and vertical edges. We propose DA-MambaIR, a degradation-aware state space model for unified image restoration. The framework introduces learnable degradation prompts into the Selective Scan process, allowing the model to adapt its semantic grouping strategy according to degradation characteristics while preserving the linear efficiency of SSMs. DA-MambaIR is evaluated on deraining, dehazing, and denoising benchmarks, including Rain100L, SOTS, and Urban100.",
+      links: [
+        { label: "PDF ↗", url: "assets/papers/DA-MambaIR_paper.pdf" },
+        { label: "Oral ↗", url: "assets/papers/DA-MambaIR_oral.pdf" }
+      ],
+      contributions: [
+        "Identified the limitation of degradation-agnostic Selective Scan in unified image restoration settings",
+        "Designed learnable degradation prompts integrated into the Mamba Selective Scan process",
+        "Conducted experiments across deraining, dehazing, and denoising benchmarks (Rain100L, SOTS, Urban100)",
+        "First-authored the resulting paper, presented as an Oral at IPIU 2026 and awarded Best Paper"
+      ]
+    },
+    p2: {
+      tag: "research",
+      title: "[프로젝트 제목 2]",
+      meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
+      image: "",
+      overview: "[프로젝트 개요를 여기에 서술]",
+      links: [
+        { label: "GitHub ↗", url: "#" }
+      ],
+      contributions: [
+        "[기여 1]",
+        "[기여 2]"
+      ]
+    },
+    p3: {
+      tag: "activity",
+      title: "[프로젝트 제목 3]",
+      meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
+      image: "",
+      overview: "[프로젝트 개요를 여기에 서술]",
+      links: [],
+      contributions: [
+        "[기여 1]",
+        "[기여 2]"
+      ]
+    },
+    p4: {
+      tag: "course project",
+      title: "[프로젝트 제목 4]",
+      meta: "[YYYY.MM – YYYY.MM] · [구분] · [역할]",
+      image: "",
+      overview: "[프로젝트 개요를 여기에 서술]",
+      links: [],
+      contributions: [
+        "[기여 1]",
+        "[기여 2]"
+      ]
+    }
+  };
+
+  /* ---- 필터 ---- */
   const pills = document.querySelectorAll('.filter-pill');
   const cards = document.querySelectorAll('.project-card');
   pills.forEach(pill => {
@@ -847,17 +956,52 @@
     });
   });
 
+  /* ---- 모달 ---- */
   const modalBackdrop = document.getElementById('modalBackdrop');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDate = document.getElementById('modalDate');
   const modalTag = document.getElementById('modalTag');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMeta = document.getElementById('modalMeta');
+  const modalImage = document.getElementById('modalImage');
+  const modalOverview = document.getElementById('modalOverview');
+  const modalLinks = document.getElementById('modalLinks');
+  const modalContributions = document.getElementById('modalContributions');
   const modalClose = document.getElementById('modalClose');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      modalTitle.textContent = card.dataset.title;
-      modalDate.textContent = card.querySelector('.card-date').textContent;
-      modalTag.textContent = card.querySelector('.card-tag').textContent;
+      const d = projectDetails[card.dataset.id];
+      if(!d) return;
+
+      modalTag.textContent = d.tag;
+      modalTitle.textContent = d.title;
+      modalMeta.textContent = d.meta;
+
+      if(d.image){
+        modalImage.src = d.image;
+        modalImage.style.display = 'block';
+      } else {
+        modalImage.style.display = 'none';
+      }
+
+      modalOverview.textContent = d.overview;
+
+      modalLinks.innerHTML = '';
+      d.links.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.textContent = link.label;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        modalLinks.appendChild(a);
+      });
+
+      modalContributions.innerHTML = '';
+      d.contributions.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        modalContributions.appendChild(li);
+      });
+
       modalBackdrop.classList.add('open');
     });
   });
