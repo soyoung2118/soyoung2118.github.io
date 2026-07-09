@@ -938,7 +938,7 @@
         { src: "assets/papers/da-mamba_figure.png", width: "60%" },                 // 기본 크기(100%)
         { src: "assets/papers/da-mamba_result.png"}    // 이 이미지만 60% 크기
       ],
-      overview: "Existing Mamba-based image restoration models provide efficient global context modeling through Selective Scan, but they are largely degradation-agnostic. In unified restoration settings, this can cause the model to confuse degradation artifacts with image structures, such as rain streaks and vertical edges. \n\n We propose DA-MambaIR, a degradation-aware state space model for unified image restoration. The framework introduces learnable degradation prompts into the Selective Scan process, allowing the model to adapt its semantic grouping strategy according to degradation characteristics while preserving the linear efficiency of SSMs. DA-MambaIR is evaluated on deraining, dehazing, and denoising benchmarks, including Rain100L, SOTS, and Urban100.",
+      overview: "Existing Mamba-based image restoration models provide efficient global context modeling through Selective Scan, but they are largely degradation-agnostic. In unified restoration settings, this can cause the model to confuse degradation artifacts with image structures, such as rain streaks and vertical edges. \n We propose DA-MambaIR, a degradation-aware state space model for unified image restoration. The framework introduces learnable degradation prompts into the Selective Scan process, allowing the model to adapt its semantic grouping strategy according to degradation characteristics while preserving the linear efficiency of SSMs. DA-MambaIR is evaluated on deraining, dehazing, and denoising benchmarks, including Rain100L, SOTS, and Urban100.",
       links: [
         { label: "PDF ↗", url: "assets/papers/DA-MambaIR_paper.pdf" },
         { label: "Oral ↗", url: "assets/papers/DA-MambaIR_oral.pdf" }
@@ -955,7 +955,7 @@
       title: "Detect LLM: Paragraph-level Classification of AI-Generated Text",
       meta: "2025.06 – 2025.07 · Competition · Modeling / Weak Supervision",
       images: [],
-      overview: "This project addresses AI-generated text detection under a structural supervision mismatch. The training data provides only document-level labels, while the evaluation requires paragraph-level predictions. Since a single document may contain both human-written and AI-generated paragraphs, directly propagating document labels to every paragraph can introduce substantial label noise.\n\nTo resolve this, we developed a weakly supervised paragraph-level detection framework. The system reconstructs fine-grained supervision from coarse document-level annotations using perplexity-based relabeling, density-based pseudo-label assignment, stylometric features, and hybrid modeling. The final model combines KLUE-RoBERTa semantic classifiers with a CatBoost classifier and a custom Extreme Voting ensemble strategy.",
+      overview: "This project addresses AI-generated text detection under a structural supervision mismatch. The training data provides only document-level labels, while the evaluation requires paragraph-level predictions. Since a single document may contain both human-written and AI-generated paragraphs, directly propagating document labels to every paragraph can introduce substantial label noise.\nTo resolve this, we developed a weakly supervised paragraph-level detection framework. The system reconstructs fine-grained supervision from coarse document-level annotations using perplexity-based relabeling, density-based pseudo-label assignment, stylometric features, and hybrid modeling. The final model combines KLUE-RoBERTa semantic classifiers with a CatBoost classifier and a custom Extreme Voting ensemble strategy.",
       links: [
         { label: "GitHub ↗", url: "https://github.com/pokssakk/Detect_AI_Generated_Text" }
       ],
@@ -972,7 +972,7 @@
       title: "LLM-based Financial Report Generation from DART Filings",
       meta: "2025 · Activity Project · Data Pipeline / LLM Report Generation",
       images: ["assets/projects/dart-figure.png"],
-      overview: "DART business reports contain text, financial tables, and footnote references in a structurally complex format. Numerical values and interpretive descriptions are often interwoven, making it difficult for LLM-based systems to distinguish what should be calculated from what should be interpreted.\n\nThis project builds a trustworthy, evidence-grounded financial report generation system for beginner investors. The core design principle is a strict separation between the system layer and the LLM layer: financial metrics are extracted and calculated through SQL and Python pipelines, while the LLM is used only for narrative explanation based on verified context.",
+      overview: "DART business reports contain text, financial tables, and footnote references in a structurally complex format. Numerical values and interpretive descriptions are often interwoven, making it difficult for LLM-based systems to distinguish what should be calculated from what should be interpreted.\nThis project builds a trustworthy, evidence-grounded financial report generation system for beginner investors. The core design principle is a strict separation between the system layer and the LLM layer: financial metrics are extracted and calculated through SQL and Python pipelines, while the LLM is used only for narrative explanation based on verified context.",
       links: [
         { label: "Presentation ↗", url: "assets/projects/LLM-based Financial Report Generation from DART Filings.pdf" }
       ],
@@ -990,7 +990,7 @@
       title: "Multi-Perspective Analysis for Quantifying Political Bias in News Articles",
       meta: "2025 · Course Project · NLP / Data Analysis",
       images: [],
-      overview: "This project aims to quantify political bias in Korean news articles using multi-dimensional NLP analysis. Political bias is not only reflected in specific keywords, but also in emotional tone toward political figures and contextual framing across the article.\n\nThe system integrates three complementary analysis layers: lexical analysis based on partisan keyword frequency, emotional analysis using KOTE-based sentiment profiling, and contextual analysis using a fine-tuned KoBERT classifier. The outputs are normalized and aggregated into a unified political bias score ranging from progressive to conservative leaning.",
+      overview: "This project aims to quantify political bias in Korean news articles using multi-dimensional NLP analysis. Political bias is not only reflected in specific keywords, but also in emotional tone toward political figures and contextual framing across the article.\nThe system integrates three complementary analysis layers: lexical analysis based on partisan keyword frequency, emotional analysis using KOTE-based sentiment profiling, and contextual analysis using a fine-tuned KoBERT classifier. The outputs are normalized and aggregated into a unified political bias score ranging from progressive to conservative leaning.",
       links: [],
       contributions: [
         "Designed the end-to-end analysis framework, from problem formulation to multi-layer scoring architecture.",
@@ -1006,7 +1006,7 @@
       title: "Environmental Impact Analysis of the Drug Supply Chain",
       meta: "2024 · ESG Data Hackathon · Data Analysis / Visualization",
       images: [],
-      overview: "This project analyzes the environmental externalities of the illicit drug industry from a lifecycle-based ESG perspective. While discussions on illegal drugs often focus on public health and crime, this project investigates hidden environmental impacts across production, distribution, and consumption stages.\n\nGiven the underground nature of the domain and limited data availability, the project focuses on constructing a transparent estimation model using conservative assumptions. The analysis highlights how illegal transportation routes, energy-intensive cultivation, and cryptocurrency-based transactions may contribute to cumulative environmental risk.",
+      overview: "This project analyzes the environmental externalities of the illicit drug industry from a lifecycle-based ESG perspective. While discussions on illegal drugs often focus on public health and crime, this project investigates hidden environmental impacts across production, distribution, and consumption stages.\nGiven the underground nature of the domain and limited data availability, the project focuses on constructing a transparent estimation model using conservative assumptions. The analysis highlights how illegal transportation routes, energy-intensive cultivation, and cryptocurrency-based transactions may contribute to cumulative environmental risk.",
       links: [],
       contributions: [
         "Framed the project around a lifecycle-based analysis of production, distribution, and consumption stages.",
@@ -1022,7 +1022,7 @@
       title: "Curriculum-to-Career Roadmap Analytics",
       meta: "2024 · Data Visualization Competition · Data Integration / Analytics",
       images: [],
-      overview: "This project connects university curriculum structures with graduate employment outcomes through data-driven analysis. Curriculum information and employment data often exist separately, making it difficult to evaluate whether educational objectives align with actual career outcomes.\n\nThe analysis integrates curriculum and graduate employment datasets, visualizes course-to-career pathways, and evaluates the relationship between module-based curricula and job placement outcomes. The project provides insights for curriculum improvement, industry alignment, and student career pathway support.",
+      overview: "This project connects university curriculum structures with graduate employment outcomes through data-driven analysis. Curriculum information and employment data often exist separately, making it difficult to evaluate whether educational objectives align with actual career outcomes.\nThe analysis integrates curriculum and graduate employment datasets, visualizes course-to-career pathways, and evaluates the relationship between module-based curricula and job placement outcomes. The project provides insights for curriculum improvement, industry alignment, and student career pathway support.",
       links: [],
       contributions: [
         "Integrated curriculum and graduate employment datasets into a unified analysis structure.",
@@ -1038,7 +1038,7 @@
         title: "itda: AI-powered SaaS Platform for Online Course Management",
         meta: "2025 · Activity Project · Frontend / React",
         images: [],
-        overview: "itda is an AI-driven education platform designed to support online course creation and management. The service helps individual educators build and operate courses without relying on complex LMS systems, while providing AI-assisted feedback tools for learners.\n\nThe platform focuses on improving course completion and engagement through interactive, practice-based learning workflows. I contributed mainly to the frontend implementation of classroom operation interfaces and course management features.",
+        overview: "itda is an AI-driven education platform designed to support online course creation and management. The service helps individual educators build and operate courses without relying on complex LMS systems, while providing AI-assisted feedback tools for learners.\nThe platform focuses on improving course completion and engagement through interactive, practice-based learning workflows. I contributed mainly to the frontend implementation of classroom operation interfaces and course management features.",
         links: [
           { label: "GitHub ↗", url: "https://github.com/soyoung2118/itda-ieoso_frontend" },
         ],
@@ -1056,7 +1056,7 @@
         title: "Inspace: Synesthetic Archiving Platform",
         meta: "2024 · Activity Project · Backend / Spring Boot",
         images: [],
-        overview: "Inspace is a web platform that helps users curate sensory-based archive spaces by collecting visual and auditory references in one place. Rather than enforcing rigid layouts, the service supports flexible arrangement so that users can build personalized digital scrapbooks based on their inspirations and aesthetic preferences.\n\nI worked on the backend side of the project, focusing on database design, API specifications, search functionality, and content retrieval features for personalized archive spaces.",
+        overview: "Inspace is a web platform that helps users curate sensory-based archive spaces by collecting visual and auditory references in one place. Rather than enforcing rigid layouts, the service supports flexible arrangement so that users can build personalized digital scrapbooks based on their inspirations and aesthetic preferences.\nI worked on the backend side of the project, focusing on database design, API specifications, search functionality, and content retrieval features for personalized archive spaces.",
         links: [
           { label: "GitHub ↗", url: "https://github.com/2024-2-SOLUX-in-space" },
         ],
@@ -1074,7 +1074,7 @@
         title: "Midpoint: Where to Meet?",
         meta: "2024 · Activity Project · Frontend / React",
         images: [],
-        overview: "Midpoint is a web service that helps multiple users find a fair and efficient meeting location. Instead of manually searching for convenient places, the system calculates an optimal midpoint using a median-based algorithm and recommends purpose-based venues such as cafés, restaurants, and study spaces.\n\nI contributed to the frontend implementation, mainly focusing on authentication pages, SNS login integration, account management logic, and shared UI layout components.",
+        overview: "Midpoint is a web service that helps multiple users find a fair and efficient meeting location. Instead of manually searching for convenient places, the system calculates an optimal midpoint using a median-based algorithm and recommends purpose-based venues such as cafés, restaurants, and study spaces.\nI contributed to the frontend implementation, mainly focusing on authentication pages, SNS login integration, account management logic, and shared UI layout components.",
         links: [
           { label: "GitHub ↗", url: "https://github.com/Solucitation" },
         ],
@@ -1092,7 +1092,7 @@
         title: "Notionable: Notion Template Marketplace and Community Platform",
         meta: "2023 · Activity Project · Frontend / Vue.js",
         images: [],
-        overview: "Notionable is a web platform for discovering, sharing, buying, and selling Notion templates. The service also provides community features so that users can exchange tips, ask questions, and learn Notion through shared templates and user-generated posts.\n\nI worked on the frontend implementation using Vue.js, mainly developing the community page, post creation flow, user interaction features, and search and navigation functions.",
+        overview: "Notionable is a web platform for discovering, sharing, buying, and selling Notion templates. The service also provides community features so that users can exchange tips, ask questions, and learn Notion through shared templates and user-generated posts.\nI worked on the frontend implementation using Vue.js, mainly developing the community page, post creation flow, user interaction features, and search and navigation functions.",
         links: [
           { label: "GitHub ↗", url: "https://github.com/E1I6-Notionable" },
         ],
