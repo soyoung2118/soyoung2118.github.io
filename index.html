@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[이름] — Portfolio</title>
+<title>Kim Soyoung — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
     --rule:#E2E4E0;
     --rule-strong:#CBCFCB;
 
-    --accent-a:#26406B;   /* deep indigo — amplitude */
-    --accent-b:#1C7A6C;   /* deep teal — phase */
+    --accent-a:#26406B;
+    --accent-b:#1C7A6C;
     --accent-soft:#EAF0EE;
     --accent-text:#1F4F52;
 
@@ -27,6 +27,7 @@
     --font-mono:'JetBrains Mono', monospace;
 
     --maxw:1180px;
+    --pad-desktop:72px;
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -37,15 +38,10 @@
     font-family:var(--font-body);
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
-    background-image:
-      linear-gradient(var(--rule) 1px, transparent 1px);
-    background-size: 100% 64px;
-    background-position: 0 120px;
   }
   a{color:inherit; text-decoration:none;}
   ul{list-style:none;}
 
-  /* ---------- NAV ---------- */
   header{
     position:sticky; top:0; z-index:50;
     background:rgba(246,246,243,0.9);
@@ -55,7 +51,7 @@
   .nav-inner{
     max-width:var(--maxw); margin:0 auto;
     display:flex; align-items:center; justify-content:space-between;
-    padding:20px 40px;
+    padding:20px var(--pad-desktop);
   }
   .logo{
     font-family:var(--font-mono);
@@ -73,15 +69,11 @@
     border-radius:3px;
     transition:all .15s ease;
   }
-  nav li:not(:last-child) a::after{
-    content:"";
-  }
   nav a:hover{color:var(--accent-a); background:var(--accent-soft);}
 
-  /* ---------- HERO ---------- */
   .hero{
     max-width:var(--maxw); margin:0 auto;
-    padding:88px 40px 90px;
+    padding:88px var(--pad-desktop) 90px;
     display:grid;
     grid-template-columns:1fr 300px;
     gap:64px;
@@ -90,8 +82,7 @@
   .hero-main{order:1;}
   .hero-photo-wrap{order:2; position:relative; padding:14px;}
   .hero-photo-wrap::before,
-  .hero-photo-wrap::after,
-  .corner-tl, .corner-br{
+  .hero-photo-wrap::after{
     content:""; position:absolute; width:22px; height:22px;
     border-color:var(--accent-a); border-style:solid;
   }
@@ -149,6 +140,9 @@
   }
   .bio .placeholder-line{
     display:block;
+    margin-bottom:4px;
+  }
+  .bio .placeholder-line.todo{
     color:var(--ink-faint);
     font-style:italic;
   }
@@ -185,10 +179,9 @@
   }
   .link-chip:hover{border-color:var(--accent-a); color:var(--accent-a);}
 
-  /* ---------- SECTION SHELL ---------- */
   section.block{
     max-width:var(--maxw); margin:0 auto;
-    padding:14px 40px 84px;
+    padding:14px var(--pad-desktop) 84px;
   }
   .section-head{
     display:flex; align-items:center; gap:16px;
@@ -214,7 +207,6 @@
     margin:18px 0 42px;
   }
 
-  /* ---------- TIMELINE (Education / Experience / Research) ---------- */
   .timeline-row{
     position:relative;
     display:grid;
@@ -263,7 +255,34 @@
     margin:40px 0 6px 2px;
   }
 
-  /* ---------- PROJECTS ---------- */
+  /* seminar rows (compact, with PDF link) */
+  .seminar-row{
+    position:relative;
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:28px;
+    padding:14px 0 14px 18px;
+    border-left:2px solid var(--rule-strong);
+  }
+  .seminar-date{
+    font-family:var(--font-mono);
+    font-size:0.76rem;
+    color:var(--ink-faint);
+  }
+  .seminar-title{
+    font-size:0.93rem;
+    color:var(--ink);
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+  }
+  .pdf-link{
+    font-family:var(--font-mono);
+    font-size:0.7rem;
+    color:var(--accent-a);
+    border-bottom:1px solid var(--accent-a);
+    white-space:nowrap;
+  }
+  .pdf-link:hover{color:var(--accent-b); border-color:var(--accent-b);}
+
   .filter-row{
     display:inline-flex; gap:2px; margin-bottom:36px;
     background:var(--surface); border:1px solid var(--rule-strong);
@@ -343,7 +362,6 @@
     margin-top:16px;
   }
 
-  /* ---------- MODAL ---------- */
   .modal-backdrop{
     position:fixed; inset:0;
     background:rgba(20,23,26,0.5);
@@ -387,7 +405,7 @@
 
   footer{
     max-width:var(--maxw); margin:0 auto;
-    padding:36px 40px 60px;
+    padding:36px var(--pad-desktop) 60px;
     border-top:1px solid var(--rule-strong);
     font-family:var(--font-mono);
     font-size:0.7rem;
@@ -395,7 +413,6 @@
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
   }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width:860px){
     .nav-inner{padding:16px 20px;}
     nav ul{gap:2px;}
@@ -403,8 +420,9 @@
     .hero-photo-wrap{order:1; max-width:180px;}
     .hero-main{order:2;}
     section.block{padding:8px 20px 56px;}
-    .timeline-row{grid-template-columns:1fr; gap:6px;}
+    .timeline-row, .seminar-row{grid-template-columns:1fr; gap:6px;}
     .project-grid{grid-template-columns:1fr;}
+    footer{padding:32px 20px 48px;}
   }
 
   :focus-visible{outline:2px solid var(--accent-a); outline-offset:2px;}
@@ -414,13 +432,14 @@
 
 <header>
   <div class="nav-inner">
-    <div class="logo">[이름]<span class="dot">.</span></div>
+    <div class="logo">Soyoung Kim<span class="dot">.</span></div>
     <nav>
       <ul>
         <li><a href="#education">education</a></li>
         <li><a href="#research">research</a></li>
         <li><a href="#experience">experience</a></li>
         <li><a href="#projects">projects</a></li>
+        <li><a href="#qualifications">qualifications</a></li>
       </ul>
     </nav>
   </div>
@@ -429,12 +448,13 @@
 <!-- ================= HERO ================= -->
 <div class="hero">
   <div class="hero-main">
-    <div class="eyebrow">[한 줄 소개, 예: CS STUDENT / VISION RESEARCHER]</div>
-    <h1 class="name">[성] <span>[이름]</span></h1>
+    <div class="eyebrow">CS STUDENT</div>
+    <h1 class="name">Soyoung <span>Kim</span></h1>
     <div class="scan-rule"></div>
     <div class="bio">
-      <span class="placeholder-line">여기에 자기소개 2~4문장을 채워주세요.</span>
-      <span class="placeholder-line">소속, 전공, 관심 연구 분야, 지향점 등을 담으면 좋아요.</span>
+      <span class="placeholder-line">Hello. I am a CS student at Sookmyung Women's University, majoring in Computer Science.</span>
+      <span class="placeholder-line">I am an undergraduate researcher at AIV Lab, working on image restoration.</span>
+      <span class="placeholder-line">I aim to extend my research toward multimodal learning, with a particular interest in vision-language models and embodied AI.</span>
     </div>
 
     <div class="interests-label">RESEARCH INTERESTS</div>
@@ -446,10 +466,9 @@
     </div>
 
     <div class="link-row">
-      <a class="link-chip" href="#">GitHub ↗</a>
-      <a class="link-chip" href="#">LinkedIn ↗</a>
-      <a class="link-chip" href="#">Blog ↗</a>
-      <a class="link-chip" href="#">email@example.com ↗</a>
+      <a class="link-chip" href="https://github.com/soyoung2118" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="link-chip" href="https://www.linkedin.com/in/soyoung2118/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="link-chip" href="mailto:soyoung2118@gmail.com">soyoung2118@gmail.com ↗</a>
     </div>
   </div>
 
@@ -511,6 +530,20 @@
       <div class="timeline-sub">[학회명] · [저자 순서]</div>
       <div class="timeline-desc">[한줄 요약]</div>
     </div>
+  </div>
+
+  <div class="sub-label" style="margin-top:56px;">LAB SEMINARS</div>
+  <div class="seminar-row">
+    <div class="seminar-date">[YYYY.MM]</div>
+    <div class="seminar-title">"[세미나/발표 논문 제목 1]" <a class="pdf-link" href="#" target="_blank" rel="noopener">PDF ↗</a></div>
+  </div>
+  <div class="seminar-row">
+    <div class="seminar-date">[YYYY.MM]</div>
+    <div class="seminar-title">"[세미나/발표 논문 제목 2]" <a class="pdf-link" href="#" target="_blank" rel="noopener">PDF ↗</a></div>
+  </div>
+  <div class="seminar-row">
+    <div class="seminar-date">[YYYY.MM]</div>
+    <div class="seminar-title">"[세미나/발표 논문 제목 3]" <a class="pdf-link" href="#" target="_blank" rel="noopener">PDF ↗</a></div>
   </div>
 </section>
 
@@ -593,8 +626,35 @@
   </div>
 </section>
 
+<!-- ================= QUALIFICATIONS ================= -->
+<section class="block" id="qualifications">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Qualifications</h2>
+  </div>
+  <hr class="section-rule">
+
+  <div class="timeline-row">
+    <div class="timeline-date">[YYYY.MM]</div>
+    <div>
+      <div class="timeline-title">SQLD</div>
+      <div class="timeline-sub">한국데이터산업진흥원</div>
+      <div class="timeline-desc">[합격 여부 / 점수]</div>
+    </div>
+  </div>
+
+  <div class="timeline-row">
+    <div class="timeline-date">[YYYY.MM]</div>
+    <div>
+      <div class="timeline-title">TOEIC</div>
+      <div class="timeline-sub">ETS</div>
+      <div class="timeline-desc">[점수] / 990</div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <span>© [YYYY] [이름]</span>
+  <span>© [YYYY] Soyoung Kim</span>
   <span>built with html / css / js</span>
 </footer>
 
