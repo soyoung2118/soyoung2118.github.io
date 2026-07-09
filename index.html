@@ -493,6 +493,8 @@
     margin-bottom:24px;
     display:block;
   }
+  .modal-image-group{display:flex; flex-direction:column; gap:12px; margin-bottom:24px;}
+  .modal-image-group img{width:100%; border:1px solid var(--rule-strong); display:block;}
   .modal-section-label{
     font-family:var(--font-mono);
     font-size:0.68rem;
@@ -868,7 +870,7 @@
     <div class="modal-meta" id="modalMeta">[YYYY.MM – YYYY.MM] · [학회/구분] · [역할]</div>
     <hr class="modal-divider">
 
-    <img class="modal-image" id="modalImage" src="" alt="" style="display:none;">
+    <div class="modal-image-group" id="modalImageGroup"></div>
 
     <div class="modal-section-label">OVERVIEW</div>
     <p class="modal-overview" id="modalOverview">[개요 설명]</p>
@@ -888,7 +890,7 @@
       tag: "research",
       title: '"DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration"',
       meta: "2025.09 – 2026.01 · IPIU 2026 · 1st Author",
-      image: "assets/papers/da-mamba_figure.png", "assets/papers/da-mamba_result.png"
+      images: ["assets/papers/da-mamba_figure.png", "assets/papers/da-mamba_result.png"],
       overview: "Existing Mamba-based image restoration models provide efficient global context modeling through Selective Scan, but they are largely degradation-agnostic. In unified restoration settings, this can cause the model to confuse degradation artifacts with image structures, such as rain streaks and vertical edges. \n\n We propose DA-MambaIR, a degradation-aware state space model for unified image restoration. The framework introduces learnable degradation prompts into the Selective Scan process, allowing the model to adapt its semantic grouping strategy according to degradation characteristics while preserving the linear efficiency of SSMs. DA-MambaIR is evaluated on deraining, dehazing, and denoising benchmarks, including Rain100L, SOTS, and Urban100.",
       links: [
         { label: "PDF ↗", url: "assets/papers/DA-MambaIR_paper.pdf" },
