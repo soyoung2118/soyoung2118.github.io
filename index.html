@@ -27,6 +27,7 @@
     --font-mono:'JetBrains Mono', monospace;
 
     --maxw:1040px;
+    --maxw-content:800px;
     --pad-desktop:28px;
   }
 
@@ -72,7 +73,7 @@
   nav a:hover{color:var(--accent-a); background:var(--accent-soft);}
 
   .hero{
-    max-width:var(--maxw); 
+    max-width:var(--maxw-content);
     margin:0 auto;
     padding:52px var(--pad-desktop) 56px;
     display:grid;
@@ -192,7 +193,7 @@
   .link-chip:hover{border-color:var(--accent-a); color:var(--accent-a);}
 
   section.block{
-    max-width:var(--maxw); margin:0 auto;
+    max-width:var(--maxw-content); margin:0 auto;
     padding:8px var(--pad-desktop) 52px;
   }
   .section-head{
@@ -488,7 +489,7 @@
   }
 
   footer{
-    max-width:var(--maxw); margin:0 auto;
+    max-width:var(--maxw-content); margin:0 auto;
     padding:20px var(--pad-desktop) 36px;
     border-top:1px solid var(--rule-strong);
     font-family:var(--font-mono);
