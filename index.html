@@ -933,8 +933,11 @@
     <div class="modal-section-label">OVERVIEW</div>
     <p class="modal-overview" id="modalOverview">[개요 설명]</p>
 
-    <div class="modal-section-label">LINKS</div>
-    <div class="modal-links" id="modalLinks"></div>
+    <div class="modal-links-section" id="modalLinksSection">
+      <div class="modal-section-label">LINKS</div>
+      <div class="modal-links" id="modalLinks"></div>
+    </div>
+
 
     <div class="modal-section-label">KEY CONTRIBUTIONS</div>
     <ul class="modal-contributions" id="modalContributions"></ul>
@@ -1144,6 +1147,7 @@
   const modalImageGroup = document.getElementById('modalImageGroup');
   const modalOverview = document.getElementById('modalOverview');
   const modalLinks = document.getElementById('modalLinks');
+  const modalLinksSection = document.getElementById('modalLinksSection');
   const modalContributions = document.getElementById('modalContributions');
   const modalClose = document.getElementById('modalClose');
 
@@ -1175,14 +1179,19 @@
       modalOverview.textContent = d.overview;
 
       modalLinks.innerHTML = '';
-      d.links.forEach(link => {
-        const a = document.createElement('a');
-        a.href = link.url;
-        a.textContent = link.label;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        modalLinks.appendChild(a);
-      });
+      if(d.links && d.links.length > 0){
+        modalLinksSection.style.display = '';
+        d.links.forEach(link => {
+          const a = document.createElement('a');
+          a.href = link.url;
+          a.textContent = link.label;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          modalLinks.appendChild(a);
+        });
+      } else {
+        modalLinksSection.style.display = 'none';
+      }
 
       modalContributions.innerHTML = '';
       d.contributions.forEach(item => {
