@@ -75,9 +75,16 @@
     max-width:var(--maxw); margin:0 auto;
     padding:88px var(--pad-desktop) 90px;
     display:grid;
-    grid-template-columns:1fr 300px;
+    grid-template-columns:1fr 220px;
     gap:64px;
     align-items:start;
+  }
+
+  .hero-photo-wrap{
+    order:2;
+    position:relative;
+    padding:14px;
+    width:220px;
   }
   .hero-main{order:1;}
   .hero-photo-wrap{order:2; position:relative; padding:14px;}
@@ -255,13 +262,80 @@
     margin:40px 0 6px 2px;
   }
 
+  /* publication card */
+  .pub-card{
+    background:var(--surface);
+    border:1px solid var(--rule-strong);
+    padding:22px 24px;
+    max-width:860px;
+  }
+  
+  .pub-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:12px;
+  }
+  
+  .pub-badge{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:0.68rem;
+    padding:4px 9px;
+    border-radius:3px;
+    background:var(--accent-soft);
+    color:var(--accent-text);
+  }
+  
+  .pub-badge.award{
+    background:#F7EFE0;
+    color:#7A4B12;
+  }
+  
+  .pub-title{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.02rem;
+    line-height:1.45;
+    margin-bottom:8px;
+    max-width:760px;
+  }
+  
+  .pub-authors{
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    line-height:1.55;
+    max-width:760px;
+  }
+  
+  .pub-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:12px;
+  }
+  
+  .pub-link{
+    font-family:var(--font-mono);
+    font-size:0.7rem;
+    color:var(--accent-a);
+    border-bottom:1px solid var(--accent-a);
+    white-space:nowrap;
+  }
+  
+  .pub-link:hover{
+    color:var(--accent-b);
+    border-color:var(--accent-b);
+  }
+  
+
   /* seminar rows (compact, with PDF link) */
   .seminar-row{
     position:relative;
     display:grid;
-    grid-template-columns:150px 1fr;
-    gap:28px;
-    padding:14px 0 14px 18px;
+    grid-template-columns:120px 1fr;
+    gap:18px;
+    padding:7px 0 7px 18px;
     border-left:2px solid var(--rule-strong);
   }
   .seminar-date{
@@ -270,9 +344,13 @@
     color:var(--ink-faint);
   }
   .seminar-title{
-    font-size:0.93rem;
+    font-size:0.9rem;
+    line-height:1.45;
     color:var(--ink);
-    display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
   }
   .pdf-link{
     font-family:var(--font-mono);
@@ -511,7 +589,7 @@
 
   <div class="sub-label">LAB AFFILIATION</div>
   <div class="timeline-row">
-    <div class="timeline-date">[2025.01 – Present]</div>
+    <div class="timeline-date">2025.01 – Present</div>
     <div>
       <div class="timeline-title">AI Vision Lab</div>
       <div class="timeline-sub">Undergraduate Researcher</div>
@@ -521,15 +599,24 @@
 
   <div class="sub-label" style="margin-top:56px;">PUBLICATIONS</div>
   <div class="pub-card">
-    <span class="pub-badge">IPIU 2026</span>
-    <span class="pub-badge">Oral</span>
-    <span class="pub-badge award">🏆 Best Paper Award</span>
+    <div class="pub-badges">
+      <span class="pub-badge">IPIU 2026</span>
+      <span class="pub-badge">Oral</span>
+      <span class="pub-badge award">🏆 Best Paper Award</span>
+    </div>
+  
     <div class="pub-title">
-      "DA-MambaIR:Degradation-Aware State Space Models for Unified Image Restoration"
-      <a class="pub-link" href="assets/papers/da-mambair_paper" target="_blank" rel="noopener">PDF ↗</a>
+      DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration
+    </div>
+  
+    <div class="pub-authors">
+      Soyoung Kim, Kibeom Hong. 38th Workshop on Image Processing and Image Understanding, Jeju, Feb. 2026.
+    </div>
+  
+    <div class="pub-links">
+      <a class="pub-link" href="assets/papers/DA-MambaIR_paper.pdf" target="_blank" rel="noopener">PDF ↗</a>
       <a class="pub-link" href="assets/papers/DA-MambaIR_oral.pdf" target="_blank" rel="noopener">Oral ↗</a>
     </div>
-    <div class="pub-authors">Soyoung Kim, Kibeom Hong. (38th Workshop on Image Processing and Image Understanding). Jeju, Feb 2026.</div>
   </div>
 
 
