@@ -158,9 +158,10 @@
 
   .interests-label{
     font-family:var(--font-mono);
-    font-size:0.68rem;
+    font-weight:700;
+    font-size:0.72rem;
     letter-spacing:0.14em;
-    color:var(--ink-faint);
+    color:var(--ink);
     margin:36px 0 12px;
   }
   .tag-row{
@@ -171,11 +172,12 @@
   }
   .tag{
     font-family:var(--font-mono);
+    font-weight:600;
     font-size:0.74rem;
     padding:6px 12px;
     border-radius:3px;
-    background:var(--accent-soft);
-    color:var(--accent-text);
+    background:var(--accent-a);
+    color:#FFFFFF;
     border:1px solid transparent;
   }
   .tag::before{content:"#"; opacity:.55; margin-right:2px;}
@@ -991,7 +993,9 @@
       tag: "activity",
       title: "LLM-based Financial Report Generation from DART Filings",
       meta: "2025 · Activity Project · Data Pipeline / LLM Report Generation",
-      images: ["assets/projects/dart-figure.png"],
+      images: [
+        { src: "assets/projects/dart-figure.png" }
+      ],
       overview: "DART business reports contain text, financial tables, and footnote references in a structurally complex format. Numerical values and interpretive descriptions are often interwoven, making it difficult for LLM-based systems to distinguish what should be calculated from what should be interpreted.\nThis project builds a trustworthy, evidence-grounded financial report generation system for beginner investors. The core design principle is a strict separation between the system layer and the LLM layer: financial metrics are extracted and calculated through SQL and Python pipelines, while the LLM is used only for narrative explanation based on verified context.",
       links: [
         { label: "Presentation ↗", url: "assets/projects/LLM-based Financial Report Generation from DART Filings.pdf" }
