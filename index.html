@@ -429,13 +429,13 @@
   .card-title{
     font-family:var(--font-display);
     font-weight:700;
-    font-size:1.05rem;
-    margin-bottom:10px;
+    font-size:0.92rem;
+    margin-bottom:8px;
     letter-spacing:-0.01em;
   }
   .card-desc{
     color:var(--ink-soft);
-    font-size:0.88rem;
+    font-size:0.8rem;
     min-height:2.8em;
   }
   .card-date{
@@ -888,8 +888,8 @@
       tag: "research",
       title: '"DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration"',
       meta: "2025.09 – 2026.01 · IPIU 2026 · 1st Author",
-      image: "", // 이미지 파일 있으면 "assets/img/da-mambair-fig1.png" 처럼 경로 넣기
-      overview: "Existing Mamba-based image restoration models provide efficient global context modeling through Selective Scan, but they are largely degradation-agnostic. In unified restoration settings, this can cause the model to confuse degradation artifacts with image structures, such as rain streaks and vertical edges. We propose DA-MambaIR, a degradation-aware state space model for unified image restoration. The framework introduces learnable degradation prompts into the Selective Scan process, allowing the model to adapt its semantic grouping strategy according to degradation characteristics while preserving the linear efficiency of SSMs. DA-MambaIR is evaluated on deraining, dehazing, and denoising benchmarks, including Rain100L, SOTS, and Urban100.",
+      image: "assets/papers/da-mamba_figure.png", "assets/papers/da-mamba_result.png"
+      overview: "Existing Mamba-based image restoration models provide efficient global context modeling through Selective Scan, but they are largely degradation-agnostic. In unified restoration settings, this can cause the model to confuse degradation artifacts with image structures, such as rain streaks and vertical edges. \n\n We propose DA-MambaIR, a degradation-aware state space model for unified image restoration. The framework introduces learnable degradation prompts into the Selective Scan process, allowing the model to adapt its semantic grouping strategy according to degradation characteristics while preserving the linear efficiency of SSMs. DA-MambaIR is evaluated on deraining, dehazing, and denoising benchmarks, including Rain100L, SOTS, and Urban100.",
       links: [
         { label: "PDF ↗", url: "assets/papers/DA-MambaIR_paper.pdf" },
         { label: "Oral ↗", url: "assets/papers/DA-MambaIR_oral.pdf" }
