@@ -890,7 +890,10 @@
       tag: "research",
       title: '"DA-MambaIR: Degradation-Aware State Space Models for Unified Image Restoration"',
       meta: "2025.09 – 2026.01 · IPIU 2026 · 1st Author",
-      images: ["assets/papers/da-mamba_figure.png", "assets/papers/da-mamba_result.png"],
+      images: [
+        { src: "assets/papers/da-mamba_figure.png", width: "60%" },                 // 기본 크기(100%)
+        { src: "assets/papers/da-mamba_result.png"}    // 이 이미지만 60% 크기
+      ],
       overview: "Existing Mamba-based image restoration models provide efficient global context modeling through Selective Scan, but they are largely degradation-agnostic. In unified restoration settings, this can cause the model to confuse degradation artifacts with image structures, such as rain streaks and vertical edges. \n\n We propose DA-MambaIR, a degradation-aware state space model for unified image restoration. The framework introduces learnable degradation prompts into the Selective Scan process, allowing the model to adapt its semantic grouping strategy according to degradation characteristics while preserving the linear efficiency of SSMs. DA-MambaIR is evaluated on deraining, dehazing, and denoising benchmarks, including Rain100L, SOTS, and Urban100.",
       links: [
         { label: "PDF ↗", url: "assets/papers/DA-MambaIR_paper.pdf" },
@@ -979,10 +982,19 @@
       modalMeta.textContent = d.meta;
 
       modalImageGroup.innerHTML = '';
-      (d.images || []).forEach(src => {
+      (d.images || []).forEach(item => {
         const img = document.createElement('img');
-        img.src = src;
+        img.src = item.src;
+        if(item.width) img.style.width = item.width;      // 지정 없으면 CSS 기본값(100%) 사용
+        if(item.align) img.style.alignSelf = item.align;   // "flex-start" | "center" | "flex-end"
         modalImageGroup.appendChild(img);
+      
+        if(item.caption){
+          const cap = document.createElement('div');
+          cap.className = 'modal-image-caption';
+          cap.textContent = item.caption;
+          modalImageGroup.appendChild(cap);
+        }
       });
 
       modalOverview.textContent = d.overview;
